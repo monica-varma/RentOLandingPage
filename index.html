@@ -1,12 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RentO!</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,400&display=swap"
+        rel="stylesheet">
+
+    <script>
+        function openTab(evt, tabName) {
+            console.log("Open tab called", tabName)
+            if(tabName=="renters-tab"){
+            document.getElementById(tabName).style.borderBottom = "5px solid #ED7861"
+            document.getElementById("owners-tab").style.borderBottom = ""
+            }
+            else{
+                document.getElementById("renters-tab").style.borderBottom = ""
+                document.getElementById(tabName).style.borderBottom = "5px solid #ED7861"
+                
+            }
+            var i, x, tablinks;
+            x = document.getElementsByClassName("tab-content");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("selected-tab");
+            }
+            console.log(tabName + " to visible")
+            document.getElementById(tabName + '-content').style.display = "block";
+            evt.currentTarget.firstElementChild.classList.add("selected-tab");
+        }
+
+        // Add a function to set the initial state on page load
+        function setInitialTab() {
+            // Get the Renters tab and trigger a click event
+            var rentersTab = document.getElementById('renters-tab');
+            rentersTab.click();
+        }
+
+        // Call the function on page load
+        window.onload = setInitialTab;
+    </script>
 </head>
+
 <body>
-    <h1>Hello</h1>
-    <p>thth</p>
+    <header>
+        <img src="./assetsLP/logo.png" alt="logo" id="logoID">
+        <div id="menu">
+            <a href="#part2">Home</a>
+            <a href="#renters-tab-content">Features</a>
+            <a href="#team">Meet the Team</a>
+        </div>
+    </header>
+
+    <section id="part1">
+        <div id="intro">
+            <h1>Welcome to the new era of finding your next <span class="orange-text">home sweet home!</span></h1>
+            <h4>Finding the ideal place to call home has never been easier. RentO is your one-stop solution for
+                simplifying the apartment search and rental process.
+            </h4>
+            <br>
+            <h4>Whether you're a home seeker looking for your dream apartment or a homeowner aiming to effortlessly list
+                your property, RentO has you covered!</h4>
+            <button id="proposal">Download our business proposal</button>
+        </div>
+        <img src="./assetsLP/double phone mockup 1.png" alt="houses with mountains in the background">
+    </section>
+
+    <section id="part2">
+        <div>
+            <h2>What's really new about it?</h2>
+        </div>
+        <div>
+            <h4>RentO brings a fresh perspective to your home search. We offer comprehensive listings with 360 Tours, a
+                house hunting assistant, verified listings, and tailored search options. You can save time and ensure
+                trust
+                in your rental process.</h4>
+        </div>
+    </section>
+
+    <div class="tabs-container">
+        <a id="renters-tab" href="javascript:void(0)" onclick="openTab(event, 'renters-tab');">
+            <div  class="tab w3-third w3-bottombar w3-hover-light-grey w3-padding selected-tab">Renters
+            </div>
+        </a>
+        <a id="owners-tab" href="javascript:void(0)" onclick="openTab(event, 'owners-tab');">
+            <div class="tab w3-third w3-bottombar w3-hover-light-grey w3-padding">Property Owners</div>
+        </a>
+        <div class="indicator"></div>
+    </div>
+
+    <div class="tab-content" id="renters-tab-content">
+        <!-- Content for Renters tab -->
+        <div id="feat1">
+            <div>
+                <img id="demo" src="./assetsLP/demo1.png" alt="phone image">
+            </div>
+            <div>
+                <img src="./assetsLP/Clara.png" alt="virtual assistant">
+                <h3>Virtual House Hunting Assistant</h3>
+                <h4>Searching for a new place to call home can be a time-consuming and often complex task, especially
+                    when it comes to finding your ideal home. That's why we introduce Clara, our built-in assistant, to
+                    guide you through this journey, making it effortless to set your search preferences to ensure you
+                    only view listings that truly match your needs.</h4>
+            </div>
+        </div>
+        <div id="feat2">
+            <div>
+                <img src="./assetsLP/panorama.png" alt="panorama view tour">
+                <h3>360 Tours</h3>
+                <h4>Exploring new homes can be quite a challenge, but RentO has your back. Our innovative 360 tour
+                    feature provides an immersive, panoramic property views. Skip the guesswork and dive deeper into
+                    your future home and gain a comprehensive understanding of your next destination</h4>
+            </div>
+            <div>
+                <img id="demo" src="./assetsLP/demo2.png" alt="phone image">
+            </div>
+        </div>
+        <div id="feat3">
+            <div>
+                <img id="demo" src="./assetsLP/demo1.png" alt="phone image">
+            </div>
+            <div>
+                <img src="./assetsLP/verified_user.png" alt="verified user">
+                <h3>Verified Listings</h3>
+                <h4>Tired of browsing through unreliable listings? With RentO, you can trust that your search is secure
+                    and efficient. Our Verified Listings feature ensures you're only browsing vetted, authentic
+                    properties.
+                    <br>
+                    <br>
+                    Say goodbye to uncertainty and hello to peace of mind when searching for your future home</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="owners-tab-content">
+        <!-- Content for Property Owners tab -->
+        <div id="feat1">
+            <div>
+                <img id="demo" src="./assetsLP/demo1.png" alt="phone image">
+            </div>
+            <div>
+                <img src="./assetsLP/Clara.png" alt="virtual assistant">
+                <h3>Guided Creation of Rental Listings</h3>
+                <h4>RentO provides property owners a guided and user friendly experience when they want to create a new
+                    listing.  Guided creation ensures they don't miss essential details, making the process more
+                    efficient and less time-consuming. Improves the overall quality of listings, making them more
+                    attractive to potential renters. Helps prevent errors or missing information, reducing the need for
+                    back-and-forth communication with potential renters.</h4>
+            </div>
+        </div>
+        <div id="feat2">
+
+            <div>
+                <img src="./assetsLP/check.png" alt="checked profiles">
+                <h3>Ideal Tenant Profile</h3>
+                <h4>RentO simplifies tenant selection for property owners with a detailed questionnaire. By reviewing
+                    applicants' profiles, they can make informed decisions, improving property management and reducing
+                    potential issues during the rental period. This streamlined process ensures immediate alignment with
+                    landlords' preferences.</h4>
+            </div>
+            <div>
+                <img id="demo" src="./assetsLP/demo2.png" alt="phone image">
+            </div>
+        </div>
+        <div id="feat3">
+            <div>
+                <img id="demo" src="./assetsLP/demo1.png" alt="phone image">
+            </div>
+            <div>
+                <img src="./assetsLP/pen.png" alt="AI Assistance">
+                <h3>AI Assistance for Rental Descriptions</h3>
+                <h4>Tired of browsing through unreliable listings? With RentO, you can trust that your search is secure
+                    and efficient. Our Verified Listings feature ensures you're only browsing thoroughly vetted,
+                    authentic properties.
+                    <br>
+                    <br>
+                    Say goodbye to uncertainty and hello to peace of mind when searching for your future home</h4>
+            </div>
+        </div>
+    </div>
+
+    <div id="team">
+        <h2>Meet the team behind RentO</h2>
+        <h4>These are the creative minds behind RentO! Our talented and dynamic team consists of three dedicated
+            designers and four developers who collaborated seamlessly to bring innovation and excellence to the renting
+            experience. With their passion and expertise, they're committed to make the journey to find the perfect home
+            as seamless and enjoyable as possible.</h4>
+        <div class="team-row" id="row1">
+            <div>
+
+                <img src="./assetsLP/evelyn.png" alt="evelyn picture">
+                <h5>Evelyn Esponda</h5>
+                <h6>UX/UI Designer</h6>
+                <a href="https://www.linkedin.com/in/evelyn-esponda/" target="_blank" class="linkedin"><img
+                        class="linkedin" id="linkedin" src="./assetsLP/in.png" alt="linkedin logo">evelyn-esponda</a>
+            </div>
+            <div>
+                <img src="./assetsLP/monica.png" alt="monica picture">
+                <h5>Monica Varma</h5>
+                <h6>UX/UI Designer</h6>
+                <a href="https://www.linkedin.com/in/monica-varma/" target="_blank" class="linkedin"><img
+                        class="linkedin" id="linkedin" src="./assetsLP/in.png" alt="linkedin logo">monica-varma</a>
+            </div>
+            <div>
+                <img src="./assetsLP/natasja.png" alt="natasja picture">
+                <h5>Natasja Berzoini</h5>
+                <h6>UX/UI Designer</h6>
+                <a href="https://www.linkedin.com/in/natasja-berzoini/" target="_blank" class="linkedin"><img
+                        class="linkedin" id="linkedin" src="./assetsLP/in.png" alt="linkedin logo">natasja-berzoini</a>
+            </div>
+        </div>
+        <div class="team-row" id="row2">
+            <div>
+                <img src="./assetsLP/lais.png" alt="lais picture">
+                <h5>Laís Alves</h5>
+                <h6>PM | Front-End Developer</h6>
+                <a href="https://www.linkedin.com/in/lais-coalves/" target="_blank" class="linkedin"><img
+                        class="linkedin" id="linkedin" src="./assetsLP/in.png" alt="linkedin logo">lais-coalves</a>
+            </div>
+            <div>
+                <img src="./assetsLP/mahima.png" alt="mahima picture">
+                <h5>Mahima Mukhi</h5>
+                <h6>Full Stack Developer</h6>
+                <a href="https://www.linkedin.com/in/mahimamukhi/" target="_blank" class="linkedin"><img
+                        class="linkedin" id="linkedin" src="./assetsLP/in.png" alt="linkedin logo">mahimamukhi</a>
+            </div>
+            <div>
+                <img src="./assetsLP/madhu.png" alt="madhu picture">
+                <h5>Madhu Nyoupane</h5>
+                <h6>Dev Lead | Full stack Developer</h6>
+                <a href="https://www.linkedin.com/in/madhu-nyoupane/" target="_blank" class="linkedin"><img
+                        class="linkedin" id="linkedin" src="./assetsLP/in.png" alt="linkedin logo">madhu-nyoupane</a>
+            </div>
+        </div>
+        <div class="team-row" id="row3">
+            <div>
+                <img src="./assetsLP/sanjana.png" alt="sanjana picture">
+                <h5>Sanjana</h5>
+                <h6>Front-End Developer</h6>
+                <a href="https://www.linkedin.com/in/sanjana-chumber/" target="_blank" class="linkedin"><img
+                        class="linkedin" id="linkedin" src="./assetsLP/in.png" alt="linkedin logo">sanjana-chumber</a>
+            </div>
+            <div>
+                <img src="./assetsLP/sean.png" alt="sean picture">
+                <h5>Xiaozhou Ji (Sean)</h5>
+                <h6>Full Stack Developer</h6>
+                <a href="https://www.linkedin.com/in/dingostiglitz/" target="_blank" class="linkedin"><img
+                        class="linkedin" id="linkedin" src="./assetsLP/in.png" alt="linkedin logo">dingostiglitz</a>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+
+        <img src="./assetsLP/footer.png" alt="logo of RentO">
+    </footer>
+
 </body>
+
 </html>
