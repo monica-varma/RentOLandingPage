@@ -1,0 +1,322 @@
+/* styles.css */
+
+:root {
+    --primary-color: #36827F;
+    --text-color: #5C5D8D;
+    --secondary-color: #ED7861;
+    --accent-purple: #413855;
+}
+
+* {
+    font-family: 'Mulish', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    
+}
+
+#logoID {
+    width: 217.727px;
+    height: 54.958px;
+    flex-shrink: 0;
+    margin-right: 42rem; /* Adjusted to margin-right */
+}
+
+#menu {
+    display: flex;
+    align-items: center
+}
+
+#menu a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-right: 4rem;
+}
+
+
+#part1 {
+    display: flex;
+    align-items: center;
+    text-align: left; /* Set text alignment to left */
+    justify-content: center;
+}
+.orange-text {
+    color: var(--secondary-color);
+}
+
+
+#intro {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    margin-left: 2rem; /* Add margin between intro and image */
+}
+
+#intro h1, #intro h4 {
+    /* Ensure these are block-level elements */
+    display: block;
+    margin: 0; /* Remove default margin */
+}
+
+#intro h1 {
+    margin-bottom: 20px; /* Add margin between h1 and h4 */
+    color: var(--primary-color);
+    font-size: 36px;
+}
+
+#intro h4 {
+    color: var(--text-color);
+    font-weight: 600
+}
+
+#part1 img {
+    width: 619.59px;
+    height: 674.1px;
+    margin-right: 5rem;
+}
+
+#proposal {
+    margin-top: 4rem;
+    display: flex;
+    width: 314px;
+    height: 56px;
+    padding: 15px 53px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    background-color: #02696A;
+    border-radius: 30px;
+    font-weight: 500;
+    color: white;
+    margin-left: 6rem;
+    border: 0;
+    
+}
+
+.tabs-container a{
+    text-decoration: none;
+    font-size: 1.3rem
+}
+#renters-tab-content, #owners-tab-content{
+    background-color: #02696A;
+    width: 100%;
+    
+}
+
+
+
+#owners-tab-content{
+    color: red;
+    text-decoration: none
+}
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+    overflow-x: hidden; /* This will hide the horizontal scrollbar */
+  }
+  
+  #part1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  
+  #part1 img {
+    max-width: 100%; /* Make the image responsive */
+    margin-left: 20px; /* Add margin to separate text and image */
+  }
+  
+  #part2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 600px; /* Adjust the max-width as needed */
+  }
+  
+  #part2 h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px; /* Add margin between h2 and h4 */
+    font-size: 2.2rem;
+    margin-top: 0px
+  }
+
+
+
+  #part2 h4{
+      color: var(--text-color);
+      font-weight: 500
+
+
+  }
+  
+  .tabs-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Add margin to separate from the previous section */
+   
+  }
+
+  .tab {
+    margin: 0 10px;
+    cursor: pointer;
+    color: #808080; /* Default color for unselected tabs */
+    font-weight: normal; /* Default font weight for unselected tabs */
+    
+}
+
+
+.tab.selected-tab {
+    color: var(--primary-color); /* Color for selected tab */
+    font-weight: bold; /* Font weight for selected tab */
+}
+  
+  .tabs-container .tab {
+    margin: 10px 30px; /* Add margin between tabs */
+  }
+
+  
+#feat1,
+#feat2,
+#feat3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px; /* Add margin between sections */
+}
+
+#feat1 img,
+#feat3 img,
+#feat2 img {
+    
+    max-width: 100%;
+    margin-right: 20px; /* Add margin to separate image and text for feat1 and feat3 */
+}
+
+#demo{
+    width: 458.62px;
+    height: 587.87px;
+}
+
+#feat2 img {
+    max-width: 100%; /* Make the image responsive */
+    margin-left: 20px; /* Add margin to separate image and text for feat2 */
+}
+
+#feat1 h3,
+#feat2 h3,
+#feat3 h3 {
+    color: white;
+}
+
+#feat1 h4,
+#feat2 h4,
+#feat3 h4 {
+    color: white;
+    font-weight: 200;
+    max-width: 500px; /* Adjust the max-width as needed for better text readability */
+}
+
+.team-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.team-row div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.team-row img.linkedin {
+    max-width: 100%;
+    border-radius: 0 !important; /* Remove border-radius */
+    margin-right: 3px
+    
+}
+
+#team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px; /* Add padding to both sides */
+}
+
+#team h2{
+    color: var(--primary-color);
+    margin-top: 2rem
+}
+
+#team h4{
+    width: 47rem;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-top: 0%;
+    text-align: center;
+}
+/* Adjust the styles for each team member div */
+#row1 > div,
+#row2 > div,
+#row3 > div {
+    text-align: center;
+    max-width: 200px; /* Adjust the max-width as needed */
+    margin: 0 3rem; /* Add margin between team members */
+}
+
+#row2 > div,
+#row3 > div {
+    margin-top: 2.6rem
+}
+
+/* Adjust the styles for the team member images */
+#row1 img,
+#row2 img,
+#row3 img {
+    max-width: 100%;
+    border-radius: 8px; /* Add border-radius for rounded corners if desired */
+}
+
+/* Adjust the styles for the team member h5, h6 elements */
+#row1 h5,
+#row2 h5,
+#row3 h5{
+    color: var(--accent-purple);
+    margin: 1rem !important;
+    font-size: 19px
+}
+#row1 h6,
+#row2 h6,
+#row3 h6 {
+    color: var(--text-color);
+    margin: 0rem !important;
+    font-size: 15px
+}
+#row1 a,
+#row2 a,
+#row3 a {
+    color: var(--text-color);
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
