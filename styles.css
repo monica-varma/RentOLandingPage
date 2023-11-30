@@ -14,34 +14,41 @@
 html {
     scroll-behavior: smooth;
 }
+#logo{
+    left: 60px;
+}
 
-
-header {
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    flex-shrink: 1;
+    width: 100%;
+    
     
 }
-
-#logoID {
-    width: 217.727px;
-    height: 54.958px;
-    flex-shrink: 0;
-    margin-right: 42rem; /* Adjusted to margin-right */
+.hamburger-menu{
+    display: none;
 }
 
-#menu {
+
+
+.menu {
     display: flex;
-    align-items: center
+    align-items: center;
+    flex-shrink: 1;
 }
-
-#menu a {
+.menu1{
+    display: none;
+}
+.menu a {
     text-decoration: none;
     color: var(--primary-color);
     font-weight: bold;
     margin-right: 4rem;
 }
+
 
 
 #part1 {
@@ -124,7 +131,6 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
     min-height: 100vh;
     background-color: #f2f2f2;
     overflow-x: hidden; /* This will hide the horizontal scrollbar */
@@ -319,4 +325,34 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
+}
+
+
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+.hamburger-menu{
+    display: block;
+}
+.hamburger-menu:hover{
+    cursor: pointer;
+}
+.navbar{
+    flex-direction: row; 
+    width:90%;
+}
+.menu1{
+    display: none;
+    gap:20px;
+    align-items: end;
+    margin-right: 40px;
+}
+    .menu1 a {
+        text-decoration: none;
+        color: var(--primary-color);
+        font-weight: bold;
+        
+    }
+
 }
