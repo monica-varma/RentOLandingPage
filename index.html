@@ -39,26 +39,69 @@
             evt.currentTarget.firstElementChild.classList.add("selected-tab");
         }
 
-        // Add a function to set the initial state on page load
         function setInitialTab() {
-            // Get the Renters tab and trigger a click event
             var rentersTab = document.getElementById('renters-tab');
             rentersTab.click();
         }
 
-        // Call the function on page load
         window.onload = setInitialTab;
+        function hamClicked(){
+            console.log("good");
+            const screenWidth = window.innerWidth;
+            if (screenWidth <= 767) {
+            const menu = document.getElementById('menu1');
+            if (menu.style.display === 'flex') {
+            menu.style.display = 'none'
+            
+        } else {
+            menu.style.display = 'flex';
+            menu.style.flexDirection = "column";
+        }
+    }
+    else {
+        menu.style.display = 'none';
+    }
+        }
+
+        function handleResize() {
+    const menu = document.getElementById('menu1');
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth <= 767 && menu.style.display === 'none') {
+        
+    } else if (screenWidth > 767) {
+        menu.style.display = 'none';
+    }
+}
+
+// Add event listeners
+window.addEventListener('resize', handleResize);
     </script>
 </head>
 
 <body>
     <header>
+       
+        <div class="navbar">
         <img src="./assetsLP/logo.png" alt="logo" id="logoID">
-        <div id="menu">
+        <div>
+            <div class="hamburger-menu" onclick="hamClicked()">
+                <img src="./assetsLP/menu.png" alt="hamburger-menu">
+            </div>
+            
+        <div id="menu" class="menu">
             <a href="#part2">Home</a>
             <a href="#renters-tab-content">Features</a>
             <a href="#team">Meet the Team</a>
         </div>
+        
+    </div>
+    </div>
+    <div id="menu1" class="menu1">
+        <a href="#part2">Home</a>
+        <a href="#renters-tab-content">Features</a>
+        <a href="#team">Meet the Team</a>
+    </div>
     </header>
 
     <section id="part1">
