@@ -66,11 +66,14 @@
         function handleResize() {
     const menu = document.getElementById('menu1');
     const screenWidth = window.innerWidth;
-
-    if (screenWidth <= 767 && menu.style.display === 'none') {
+    
+    if (screenWidth <= 767) {
+        
+        
         
     } else if (screenWidth > 767) {
         menu.style.display = 'none';
+        
     }
 }
 
@@ -113,9 +116,10 @@ window.addEventListener('resize', handleResize);
             <br>
             <h4>Whether you're a home seeker looking for your dream apartment or a homeowner aiming to effortlessly list
                 your property, RentO has you covered!</h4>
+
             <button id="proposal">Download our business proposal</button>
         </div>
-        <img src="./assetsLP/double phone mockup 1.png" alt="houses with mountains in the background">
+        <img src="./assetsLP/double phone mockup 1.png" alt="houses with mountains in the background" id="mock1">
     </section>
 
     <section id="part2">

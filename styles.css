@@ -355,5 +355,14 @@ body {
         font-weight: bold;
         
     }
+    #part1{
+        flex-direction: column;
+    }
+    #intro {
+        text-align: center;
+    }
+    #intro h4{
+        line-height: 24px;
+    }
 
 }
