@@ -45,21 +45,37 @@
         }
 
         window.onload = setInitialTab;
-        function hamClicked(){
-            console.log("good");
-            const screenWidth = window.innerWidth;
-            if (screenWidth <= 767) {
+
+        function aClicked(){
+            const body = document.body;
             const menu = document.getElementById('menu1');
+            menu.style.display = 'none'
+            body.style.overflow = 'auto';
+
+        }
+
+        function hamClicked(){
+            const body = document.body;
+
+            const screenWidth = window.innerWidth;
+            const menu = document.getElementById('menu1');
+            if (screenWidth <= 767) {
             if (menu.style.display === 'flex') {
             menu.style.display = 'none'
+            body.style.overflow = 'auto'; // Allow scrolling when menu is closed
+
             
         } else {
             menu.style.display = 'flex';
             menu.style.flexDirection = "column";
+            body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+
         }
     }
     else {
         menu.style.display = 'none';
+        body.style.overflow = 'auto'; // Allow scrolling when menu is closed for larger screens
+
     }
         }
 
@@ -72,7 +88,11 @@
     
     if (screenWidth <= 767) {
 
+        feat1.style.display = 'flex'
+        feat1.style.flexDirection='column';
+        feat2.style.display = 'none'
         
+        feat3.style.display = 'none'
         
         
     } else if (screenWidth > 767) {
@@ -82,10 +102,59 @@
         feat2.style.display = 'flex'
         feat2.style.flexDirection='row';
         feat3.style.display = 'flex'
+        feat3.style.flexDirection='row';
         
     }
 }
 let index = 1;
+let pIndex = 1;
+
+function buttonClickedO(oIndex){
+    let fourth = document.getElementById("feat4")
+    let fifth = document.getElementById("feat5")
+    let sixth = document.getElementById("feat6")
+    if(oIndex=='left'){
+        if(pIndex==2){
+        pIndex=1;
+        
+        fourth.style.display = "flex";
+        fourth.style.flexDirection = "column";
+        fifth.style.display = "none";
+        sixth.style.display = "none";
+    } 
+    else if(pIndex==3){
+            pIndex=2;
+        fifth.style.display = "flex";
+        fifth.style.flexDirection = "column-reverse";
+        fourth.style.display = "none";
+        sixth.style.display = "none";
+
+    }
+    }
+    else{
+    if(pIndex==1){
+        
+            pIndex=2;
+        fifth.style.display = "flex";
+        fifth.style.flexDirection = "column-reverse";
+        fourth.style.display = "none";
+        sixth.style.display = "none";
+        
+
+    }
+    else if(pIndex==2){
+        
+       pIndex=3;
+        sixth.style.display = "flex";
+        sixth.style.flexDirection = "column";
+        fifth.style.display = "none";
+        fourth.style.display = "none";
+        
+
+    }
+}
+}
+
 function buttonClicked(bIndex){
     let first = document.getElementById("feat1")
     let second = document.getElementById("feat2")
@@ -109,14 +178,6 @@ function buttonClicked(bIndex){
         third.style.display = "none";
 
     }
-    // if(buttonId == "feat3"){
-    //     console.log(buttonId)
-    //     third.style.display = "flex";
-    //     third.style.flexDirection = "column";
-    //     second.style.display = "none";
-    //     first.style.display = "none";
-
-    // }
 }
 else{
     if(index==1){
@@ -167,15 +228,15 @@ window.addEventListener('resize', handleResize);
     </div>
     </div>
     <div id="menu1" class="menu1">
-        <div class="aDiv">
+        <div class="aDiv" onclick="aClicked()">
 
             <a href="#part2">Home</a>
         </div>
-        <div class="aDiv">
+        <div class="aDiv" onclick="aClicked()">
 
             <a href="#renters-tab-content">Features</a>
         </div>
-        <div class="twoDiv">
+        <div class="twoDiv" onclick="aClicked()">
 
             <a href="#team">Meet the Team</a>
         </div>
@@ -263,8 +324,8 @@ window.addEventListener('resize', handleResize);
             </div>
         </div>
         <div class="buttoncontainer">
-        <div onclick="buttonClicked('left')" class="button" id="button1">></div>
-        <div onclick="buttonClicked('right')" class="button" id="button2"><</div>
+        <div onclick="buttonClicked('left')" class="button" id="button1"><</div>
+        <div onclick="buttonClicked('right')" class="button" id="button2">></div>
     </div>
         
    
@@ -314,6 +375,10 @@ window.addEventListener('resize', handleResize);
                     <br>
                     Say goodbye to uncertainty and hello to peace of mind when searching for your future home</h4>
             </div>
+        </div>
+        <div class="buttoncontainer">
+            <div onclick="buttonClickedO('left')" class="button" id="button1"><</div>
+            <div onclick="buttonClickedO('right')" class="button" id="button2">></div>
         </div>
     </div>
 
@@ -390,7 +455,7 @@ window.addEventListener('resize', handleResize);
     </div>
     <footer>
 
-        <img src="./assetsLP/footer.png" alt="logo of RentO">
+        <img style="margin-top: -200px;width: 100%;" src="./assetsLP/footer.png" alt="logo of RentO">
     </footer>
 </div>
 </body>

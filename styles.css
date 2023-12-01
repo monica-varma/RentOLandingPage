@@ -110,9 +110,11 @@ html {
     font-weight: 500;
     color: white;
     margin-left: 6rem;
+cursor: pointer;
     border: 0;
     
 }
+
 
 .tabs-container a{
     text-decoration: none;
@@ -162,6 +164,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin: auto;
     max-width: 600px; /* Adjust the max-width as needed */
   }
   
@@ -295,7 +298,7 @@ body {
 }
 
 #team h4{
-    width: 47rem;
+    width: 100%;
     font-weight: 400;
     color: var(--text-color);
     margin-top: 0%;
@@ -359,6 +362,7 @@ body {
 .hamburger-menu:hover{
     cursor: pointer;
 }
+
 .navbar{
     flex-direction: row; 
     width:90%;
@@ -433,20 +437,23 @@ color:red;
 display: flex;
 border-radius: 2rem 0 0 2rem;
 background-color: gray;
+justify-content: end;
+width: 40px;
 
    }
    #button1{
     background-color: gray;
     border-radius:  0 2rem 2rem 0;
+    width: 40px;
    }
    #button1:hover, #button2:hover{
     background-color: white;
    }
-    #feat1{
+    #feat1,#feat4{
         display: flex;
         flex-direction: column;
     }
-    #feat2, #feat3{
+    #feat2, #feat3,#feat5,#feat6{
         display: none;
     }
   
