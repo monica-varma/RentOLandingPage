@@ -65,17 +65,82 @@
 
         function handleResize() {
     const menu = document.getElementById('menu1');
+    const feat1 = document.getElementById('feat1');
+    const feat2 = document.getElementById('feat2');
+    const feat3 = document.getElementById('feat3');
     const screenWidth = window.innerWidth;
     
     if (screenWidth <= 767) {
+
         
         
         
     } else if (screenWidth > 767) {
         menu.style.display = 'none';
+        feat1.style.display = 'flex'
+        feat1.style.flexDirection='row';
+        feat2.style.display = 'flex'
+        feat2.style.flexDirection='row';
+        feat3.style.display = 'flex'
         
     }
 }
+let index = 1;
+function buttonClicked(bIndex){
+    let first = document.getElementById("feat1")
+    let second = document.getElementById("feat2")
+    let third = document.getElementById("feat3")
+    
+    if(bIndex=='left'){
+    if(index==2){
+        index=1;
+        
+        first.style.display = "flex";
+        first.style.flexDirection = "column";
+        second.style.display = "none";
+        third.style.display = "none";
+    }
+
+         else if(index==3){
+            index=2;
+        second.style.display = "flex";
+        second.style.flexDirection = "column-reverse";
+        first.style.display = "none";
+        third.style.display = "none";
+
+    }
+    // if(buttonId == "feat3"){
+    //     console.log(buttonId)
+    //     third.style.display = "flex";
+    //     third.style.flexDirection = "column";
+    //     second.style.display = "none";
+    //     first.style.display = "none";
+
+    // }
+}
+else{
+    if(index==1){
+        console.log(index);
+            index=2;
+        second.style.display = "flex";
+        second.style.flexDirection = "column-reverse";
+        first.style.display = "none";
+        third.style.display = "none";
+        
+
+    }
+    else if(index==2){
+        console.log(index);
+       index=3;
+        third.style.display = "flex";
+        third.style.flexDirection = "column";
+        second.style.display = "none";
+        first.style.display = "none";
+        
+
+    }
+}
+    }
 
 // Add event listeners
 window.addEventListener('resize', handleResize);
@@ -83,6 +148,7 @@ window.addEventListener('resize', handleResize);
 </head>
 
 <body>
+    <div class="bodyCotainer">
     <header>
        
         <div class="navbar">
@@ -101,9 +167,18 @@ window.addEventListener('resize', handleResize);
     </div>
     </div>
     <div id="menu1" class="menu1">
-        <a href="#part2">Home</a>
-        <a href="#renters-tab-content">Features</a>
-        <a href="#team">Meet the Team</a>
+        <div class="aDiv">
+
+            <a href="#part2">Home</a>
+        </div>
+        <div class="aDiv">
+
+            <a href="#renters-tab-content">Features</a>
+        </div>
+        <div class="twoDiv">
+
+            <a href="#team">Meet the Team</a>
+        </div>
     </div>
     </header>
 
@@ -119,7 +194,7 @@ window.addEventListener('resize', handleResize);
 
             <button id="proposal">Download our business proposal</button>
         </div>
-        <img src="./assetsLP/double phone mockup 1.png" alt="houses with mountains in the background" id="mock1">
+        <img src="./assetsLP/double phone mockup 1.svg" alt="houses with mountains in the background" id="mock1">
     </section>
 
     <section id="part2">
@@ -149,7 +224,7 @@ window.addEventListener('resize', handleResize);
         <!-- Content for Renters tab -->
         <div id="feat1">
             <div>
-                <img id="demo" src="./assetsLP/demo1.png" alt="phone image">
+                <img id="demo" src="./assetsLP/demo1.svg" alt="phone image">
             </div>
             <div>
                 <img src="./assetsLP/Clara.png" alt="virtual assistant">
@@ -169,12 +244,12 @@ window.addEventListener('resize', handleResize);
                     your future home and gain a comprehensive understanding of your next destination</h4>
             </div>
             <div>
-                <img id="demo" src="./assetsLP/demo2.png" alt="phone image">
+                <img id="demo" src="./assetsLP/demo2.svg" alt="phone image">
             </div>
         </div>
         <div id="feat3">
             <div>
-                <img id="demo" src="./assetsLP/demo1.png" alt="phone image">
+                <img id="demo" src="./assetsLP/demo1.svg" alt="phone image">
             </div>
             <div>
                 <img src="./assetsLP/verified_user.png" alt="verified user">
@@ -187,13 +262,19 @@ window.addEventListener('resize', handleResize);
                     Say goodbye to uncertainty and hello to peace of mind when searching for your future home</h4>
             </div>
         </div>
+        <div class="buttoncontainer">
+        <div onclick="buttonClicked('left')" class="button" id="button1">></div>
+        <div onclick="buttonClicked('right')" class="button" id="button2"><</div>
+    </div>
+        
+   
     </div>
 
     <div class="tab-content" id="owners-tab-content">
         <!-- Content for Property Owners tab -->
-        <div id="feat1">
+        <div id="feat4">
             <div>
-                <img id="demo" src="./assetsLP/demo1.png" alt="phone image">
+                <img id="demo" src="./assetsLP/demo4.svg" alt="phone image">
             </div>
             <div>
                 <img src="./assetsLP/Clara.png" alt="virtual assistant">
@@ -205,7 +286,7 @@ window.addEventListener('resize', handleResize);
                     back-and-forth communication with potential renters.</h4>
             </div>
         </div>
-        <div id="feat2">
+        <div id="feat5">
 
             <div>
                 <img src="./assetsLP/check.png" alt="checked profiles">
@@ -216,12 +297,12 @@ window.addEventListener('resize', handleResize);
                     landlords' preferences.</h4>
             </div>
             <div>
-                <img id="demo" src="./assetsLP/demo2.png" alt="phone image">
+                <img id="demo" src="./assetsLP/demo5.svg" alt="phone image">
             </div>
         </div>
-        <div id="feat3">
+        <div id="feat6">
             <div>
-                <img id="demo" src="./assetsLP/demo1.png" alt="phone image">
+                <img id="demo" src="./assetsLP/demo6.svg" alt="phone image">
             </div>
             <div>
                 <img src="./assetsLP/pen.png" alt="AI Assistance">
@@ -245,21 +326,21 @@ window.addEventListener('resize', handleResize);
         <div class="team-row" id="row1">
             <div>
 
-                <img src="./assetsLP/evelyn.png" alt="evelyn picture">
+                <img src="./assetsLP/evelyn.svg" alt="evelyn picture">
                 <h5>Evelyn Esponda</h5>
                 <h6>UX/UI Designer</h6>
                 <a href="https://www.linkedin.com/in/evelyn-esponda/" target="_blank" class="linkedin"><img
                         class="linkedin" id="linkedin" src="./assetsLP/in.png" alt="linkedin logo">evelyn-esponda</a>
             </div>
             <div>
-                <img src="./assetsLP/monica.png" alt="monica picture">
+                <img src="./assetsLP/monica.svg" alt="monica picture">
                 <h5>Monica Varma</h5>
                 <h6>UX/UI Designer</h6>
                 <a href="https://www.linkedin.com/in/monica-varma/" target="_blank" class="linkedin"><img
                         class="linkedin" id="linkedin" src="./assetsLP/in.png" alt="linkedin logo">monica-varma</a>
             </div>
             <div>
-                <img src="./assetsLP/natasja.png" alt="natasja picture">
+                <img src="./assetsLP/natasja.svg" alt="natasja picture">
                 <h5>Natasja Berzoini</h5>
                 <h6>UX/UI Designer</h6>
                 <a href="https://www.linkedin.com/in/natasja-berzoini/" target="_blank" class="linkedin"><img
@@ -268,21 +349,21 @@ window.addEventListener('resize', handleResize);
         </div>
         <div class="team-row" id="row2">
             <div>
-                <img src="./assetsLP/lais.png" alt="lais picture">
+                <img src="./assetsLP/lais.svg" alt="lais picture">
                 <h5>Laís Alves</h5>
                 <h6>PM | Front-End Developer</h6>
                 <a href="https://www.linkedin.com/in/lais-coalves/" target="_blank" class="linkedin"><img
                         class="linkedin" id="linkedin" src="./assetsLP/in.png" alt="linkedin logo">lais-coalves</a>
             </div>
             <div>
-                <img src="./assetsLP/mahima.png" alt="mahima picture">
+                <img src="./assetsLP/mahima.svg" alt="mahima picture">
                 <h5>Mahima Mukhi</h5>
                 <h6>Full Stack Developer</h6>
                 <a href="https://www.linkedin.com/in/mahimamukhi/" target="_blank" class="linkedin"><img
                         class="linkedin" id="linkedin" src="./assetsLP/in.png" alt="linkedin logo">mahimamukhi</a>
             </div>
             <div>
-                <img src="./assetsLP/madhu.png" alt="madhu picture">
+                <img src="./assetsLP/madhu.svg" alt="madhu picture">
                 <h5>Madhu Nyoupane</h5>
                 <h6>Dev Lead | Full stack Developer</h6>
                 <a href="https://www.linkedin.com/in/madhu-nyoupane/" target="_blank" class="linkedin"><img
@@ -291,14 +372,14 @@ window.addEventListener('resize', handleResize);
         </div>
         <div class="team-row" id="row3">
             <div>
-                <img src="./assetsLP/sanjana.png" alt="sanjana picture">
+                <img src="./assetsLP/sanjana.svg" alt="sanjana picture">
                 <h5>Sanjana</h5>
                 <h6>Front-End Developer</h6>
                 <a href="https://www.linkedin.com/in/sanjana-chumber/" target="_blank" class="linkedin"><img
                         class="linkedin" id="linkedin" src="./assetsLP/in.png" alt="linkedin logo">sanjana-chumber</a>
             </div>
             <div>
-                <img src="./assetsLP/sean.png" alt="sean picture">
+                <img src="./assetsLP/sean.svg" alt="sean picture">
                 <h5>Xiaozhou Ji (Sean)</h5>
                 <h6>Full Stack Developer</h6>
                 <a href="https://www.linkedin.com/in/dingostiglitz/" target="_blank" class="linkedin"><img
@@ -311,7 +392,7 @@ window.addEventListener('resize', handleResize);
 
         <img src="./assetsLP/footer.png" alt="logo of RentO">
     </footer>
-
+</div>
 </body>
 
 </html>
