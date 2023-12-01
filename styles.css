@@ -96,7 +96,7 @@ html {
 }
 
 #proposal {
-    margin-top: 4rem;
+    margin:auto;
     display: flex;
     width: 314px;
     height: 56px;
@@ -109,7 +109,6 @@ html {
     border-radius: 30px;
     font-weight: 500;
     color: white;
-    margin-left: 6rem;
 cursor: pointer;
     border: 0;
     
@@ -267,6 +266,7 @@ body {
 .team-row {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     align-items: center;
     margin-top: 20px;
 }
@@ -455,6 +455,11 @@ width: 40px;
     }
     #feat2, #feat3,#feat5,#feat6{
         display: none;
+    }
+    #demo{
+        width: 90%;
+        margin: 0 !important;
+        
     }
   
 }
