@@ -203,6 +203,11 @@ else{
 }
     }
 
+
+    function downloadPdf(){
+        window.open('./assetsLP/FinalUpload.pdf', '_blank');
+    }
+
 // Add event listeners
 window.addEventListener('resize', handleResize);
     </script>
@@ -213,7 +218,7 @@ window.addEventListener('resize', handleResize);
     <header>
        
         <div class="navbar">
-        <img src="./assetsLP/logo.png" alt="logo" id="logoID">
+        <img src="./assetsLP/logo.svg" alt="logo" id="logoID">
         <div>
             <div class="hamburger-menu" onclick="hamClicked()">
                 <img src="./assetsLP/menu.png" alt="hamburger-menu">
@@ -246,16 +251,16 @@ window.addEventListener('resize', handleResize);
     <section id="part1">
         <div id="intro">
             <h1>Welcome to the new era of finding your next <span class="orange-text">home sweet home!</span></h1>
-            <h4>Finding the ideal place to call home has never been easier. RentO is your one-stop solution for
+            <h4 >Finding the ideal place to call home has never been easier. RentO is your one-stop solution for
                 simplifying the apartment search and rental process.
             </h4>
             <br>
-            <h4>Whether you're a home seeker looking for your dream apartment or a homeowner aiming to effortlessly list
+            <h4 style="margin-bottom: 4rem;">Whether you're a home seeker looking for your dream apartment or a homeowner aiming to effortlessly list
                 your property, RentO has you covered!</h4>
 
-            <button id="proposal">Download our business proposal</button>
+            <button id="proposal" onclick="downloadPdf()">Download our business proposal</button>
         </div>
-        <img src="./assetsLP/double phone mockup 1.svg" alt="houses with mountains in the background" id="mock1">
+        <img class="hoverEffect" src="./assetsLP/double phone mockup 1.svg" alt="houses with mountains in the background" id="mock1">
     </section>
 
     <section id="part2">
@@ -285,7 +290,7 @@ window.addEventListener('resize', handleResize);
         <!-- Content for Renters tab -->
         <div id="feat1">
             <div>
-                <img id="demo" src="./assetsLP/demo1.svg" alt="phone image">
+                <img class="hoverEffect" id="demo" src="./assetsLP/demo1.svg" alt="phone image">
             </div>
             <div>
                 <img src="./assetsLP/Clara.png" alt="virtual assistant">
@@ -305,12 +310,12 @@ window.addEventListener('resize', handleResize);
                     your future home and gain a comprehensive understanding of your next destination</h4>
             </div>
             <div>
-                <img id="demo" src="./assetsLP/demo2.svg" alt="phone image">
+                <img class="hoverEffect" id="demo" src="./assetsLP/demo2.svg" alt="phone image">
             </div>
         </div>
         <div id="feat3">
             <div>
-                <img id="demo" src="./assetsLP/demo1.svg" alt="phone image">
+                <img id="demo" class="hoverEffect" src="./assetsLP/demo1.svg" alt="phone image">
             </div>
             <div>
                 <img src="./assetsLP/verified_user.png" alt="verified user">
@@ -335,7 +340,7 @@ window.addEventListener('resize', handleResize);
         <!-- Content for Property Owners tab -->
         <div id="feat4">
             <div>
-                <img id="demo" src="./assetsLP/demo4.svg" alt="phone image">
+                <img id="demo" class="hoverEffect" src="./assetsLP/demo4.svg" alt="phone image">
             </div>
             <div>
                 <img src="./assetsLP/Clara.png" alt="virtual assistant">
@@ -358,12 +363,12 @@ window.addEventListener('resize', handleResize);
                     landlords' preferences.</h4>
             </div>
             <div>
-                <img id="demo" src="./assetsLP/demo5.svg" alt="phone image">
+                <img id="demo" class="hoverEffect" src="./assetsLP/demo5.svg" alt="phone image">
             </div>
         </div>
         <div id="feat6">
             <div>
-                <img id="demo" src="./assetsLP/demo6.svg" alt="phone image">
+                <img id="demo" class="hoverEffect" src="./assetsLP/demo6.svg" alt="phone image">
             </div>
             <div>
                 <img src="./assetsLP/pen.png" alt="AI Assistance">
