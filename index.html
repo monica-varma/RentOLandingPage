@@ -203,6 +203,11 @@ else{
 }
     }
 
+
+    function downloadPdf(){
+        window.open('./assetsLP/FinalUpload.pdf', '_blank');
+    }
+
 // Add event listeners
 window.addEventListener('resize', handleResize);
     </script>
@@ -253,7 +258,7 @@ window.addEventListener('resize', handleResize);
             <h4 style="margin-bottom: 4rem;">Whether you're a home seeker looking for your dream apartment or a homeowner aiming to effortlessly list
                 your property, RentO has you covered!</h4>
 
-            <button id="proposal">Download our business proposal</button>
+            <button id="proposal" onclick="downloadPdf()">Download our business proposal</button>
         </div>
         <img class="hoverEffect" src="./assetsLP/double phone mockup 1.svg" alt="houses with mountains in the background" id="mock1">
     </section>
